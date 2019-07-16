@@ -1,0 +1,48 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<link rel='stylesheet' href='{% static "symsim/css/style.css" %}'>
+<div class="content">
+<div class="topology">
+	<div class="topo-img-text">
+	<div class="topo-img">
+	<img src='{% static "symsim/img/example-nica.jpg"%}' id="topo-1">
+	</div>
+
+	<div class="topo-describe">
+	<p align="justify">
+	Исходные данные были взяты из предложения по концептуальному дизайну NICA-MPD. Эта установка является типичной для класса спектрометров ядерной физики. Рассмотрим процесс передачи и сохранения «сырых данных», которые традиционно именуются RAW файлами. Пусть центр обработки и хранения состоит из двух уровней: Tier0 и Тier1. Уровень Tier0 предназначен только для приема информации с детектора и ее временного хранения. Уровень Тier1 обеспечивает длительное хранения информации и одновременно ее обработку
+	</p>
+	<h3>Конфигурация уровней обработки</h3>
+	<table id="conf_1">
+	<tr><th>Параметр</th><th>Tier0</th><th>Tier1</th></tr>
+	<!--ряд с ячейками заголовков-->
+	<tr><td>Количество ядер, шт</td><td id="td_1">500</td><td id="td_1">500</td></tr>
+	<tr><td>Буфер, ТБ</td><td id="td_1">5</td><td id="td_1">5</td></tr> <!--ряд с ячейками тела таблицы-->
+	<tr><td>Количество драйвов, шт</td><td id="td_1">-</td><td id="td_1">12</td></tr>
+	<tr><td>Количество RAW-драйвов, шт</td><td id="td_1">-</td><td id="td_1">2</td></tr>
+	</table>
+
+	</br>
+	Центр Tier1 оснащен роботизированной библиотекой с параметрами:
+	</br>
+	<table id="conf_1">
+	<tr><th>Параметр</th><th>Значение</th><th>Единица измерения</th></tr> <!--ряд с ячейками заголовков-->
+	<tr><td>Емкость общая</td><td id="td_1">5</td><td id="td_1">ПБ</td></tr>
+	<tr><td>Тип накопителя</td><td id="td_1">LTO6</td><td id="td_1"></td></tr>
+	<tr><td>Емкость картриджа</td><td id="td_1">3</td><td id="td_1">ТБ</td></tr>
+	<tr><td>Скорость записи</td><td id="td_1">200</td><td id="td_1">Мб/c</td></tr>
+	<tr><td>Время монтирования ленты </td><td id="td_1">20</td><td id="td_1">c</td></tr>
+	<tr><td>Время подачи ленты в накопитель</td><td id="td_1">6</td><td id="td_1">c</td></tr>
+	<!--ряд с ячейками тела таблицы-->
+	</table>
+
+
+	<div>
+	<a href="#show-more-results" id="show_more">Показать результаты</a>
+	</div>
+	</div>
+	</div>
+</div>
+</div>
+{% endblock content %}

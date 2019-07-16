@@ -1,0 +1,187 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  padding-bottom: 40px;
+  color: #5a5a5a;
+  background-color: rgba(232, 235, 255,0.7);
+}
+
+
+/* CUSTOMIZE THE NAVBAR
+-------------------------------------------------- */
+
+/* Special class on .container surrounding .navbar, used for positioning it into place. */
+.navbar-wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 20;
+}
+.navbar {
+    background: linear-gradient(75deg, #FFFFFF 0%, #FFFFFF 21%, #0044B3 60%, #0044B3 71%);
+    border-color: transparent;
+
+}
+.navbar-inverse .navbar-nav>li>a {
+     color: #E9E9E9;
+}
+.navbar-nav {
+    float: right;
+}
+
+
+/* Flip around the padding for proper display in narrow viewports */
+.navbar-wrapper > .container {
+  padding-right: 0;
+  padding-left: 0;
+}
+.navbar-wrapper .navbar {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+.navbar-wrapper .navbar .container {
+  width: auto;
+}
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  height: 700px;
+  margin-bottom: 60px;
+  margin-top: 40px;
+}
+ul>li>a, ul>li>p {
+    font-size: 16px;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  z-index: 10;
+  padding-bottom: 80px;
+  color: #004390;
+
+}
+
+/* Declare heights because of positioning of img element */
+.carousel .item {
+  height: 700px;
+}
+.glyphicon  {
+    color: rgba(0, 0, 0, 0.5);
+}
+.first-slide{
+  top: 15%;
+  left: 20%;
+  min-width: 75%;
+  height: 65%;
+}
+.carousel-inner > .item > .container > .carousel-caption > a >img {
+  top: 20%;
+  left: 27%;
+  min-width: 75%;
+  height: 65%;
+}
+.carousel-indicators .active {
+    width: 20px;
+    height: 20px;
+}
+
+.carousel-indicators li {
+    width: 15px;
+    height: 15px;
+    border: 1px solid black;
+}
+
+
+.logo {
+    width: 210px;
+    height: 80px;
+    margin-top: -5px;
+}
+
+.navbar {
+    height: 100px;
+}
+.nav.navbar-nav {
+    padding-top: 25px;
+}
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: normal;
+}
+.marketing .col-lg-4 p {
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 20px 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 768px) {
+  /* Navbar positioning foo */
+  .navbar-wrapper {
+    margin-top: 10px;
+  }
+  .navbar-wrapper .container {
+    padding-right: 15px;
+    padding-left: 15px;
+  }
+  .navbar-wrapper .navbar {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  /* The navbar becomes detached from the top, so we round the corners */
+  .navbar-wrapper .navbar {
+    border-radius: 4px;
+  }
+
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 20px;
+    font-size: 21px;
+    line-height: 1.4;
+  }
+  .carousel-indicators{
+    bottom: 5px;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 992px) {
+  .featurette-heading {
+    margin-top: 20px;
+  }
+}

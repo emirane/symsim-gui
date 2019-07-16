@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block login_auth %}
+    <div  class="wrapp_form">
+            <form action="/auth/register/" method="POST">
+                {% csrf_token %}
+                {% for field in register_form %}
+                       <div class="form-group register_style">
+                        {{ field.errors }}
+                        {{ field.label_tag }}
+                        {{ field }}
+                       </div>
+                {% endfor %}
+<input  type="submit" value="SIGN UP" class="submit_auth">
+            </form>
+    </div>
+{% endblock login_auth %}

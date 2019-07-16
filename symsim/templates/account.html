@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+<link rel='stylesheet' href='{% static "symsim/css/bootstrap.min.css" %}'>
+<script src='{% static "symsim/js/jquery.js" %}'></script>
+<link rel='stylesheet' href='{% static "symsim/css/bootstrap-theme.min.css" %}'>
+<link rel='stylesheet' href='{% static "symsim/css/carousel.css" %}'>
+<script src='{% static "symsim/js/script.js" %}'></script>
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="https://static.change.org/profile-img/default-user-profile.svg"  alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{ request.user }}
+					</div>
+					<div class="profile-usertitle-job">
+						Developer
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+
+						<li>
+							<a href="" class="text-success">
+							<i class="glyphicon glyphicon-user"></i>
+							Настройки профиля </a>
+						</li>
+						<li>
+							<a href="" target="_blank">
+							<i class="glyphicon glyphicon-book"></i>
+							Справка </a>
+						</li>
+						<li>
+							<a href="">
+							<i class="glyphicon glyphicon-flag"></i>
+							Обратная связь </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-9">
+            <div class="profile-content">
+			   <div class="row placeholders">
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                      <img src='{% static "symsim/img/icon/icon-add.png" %}' width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                      <a href="{% url 'create_model_name' %}" class="create-model-button text-success">Создать модель</a>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                      <img src='{% static "symsim/img/icon/icon-more.png" %}' width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+					   <a class="text-info">Выбрать модель</a>
+						<ul class="list_user_model hidden">
+							{% for model in user_model %}
+							<li><a href="{% url 'create_model' id=model.id %}" class="text-info"> <i class="glyphicon glyphicon-menu-right"></i>{{ model.model_name }}</a></li>
+							{% endfor %}
+						</ul>
+                    </div>
+                    <div class="col-xs-6 col-sm-3 placeholder">
+                      <img src='{% static "symsim/img/icon/icon-delete.png" %}' width="200" height="200" class="img-responsive" alt="Generic placeholder thumbnail">
+                      <a class="text-danger">Удалить</a>
+                    </div>
+                  </div>
+            </div>
+		</div>
+		<!--<table class="table table-hover">
+			<tr>
+            	<th>Model_name</th>
+            	<th>Model_id</th>
+				<th>User_id</th>
+			</tr>
+			{% for model in user_model %}
+        <tr>
+			<td>{{ model.model_name }}</td>
+			<td>{{ model.id}}</td>
+			<td>{{ model.user_id }}</td>
+		</tr>
+        {% endfor %}
+		</table>!-->
+	</div>
+</div>
+
+<link rel='stylesheet' href='{% static "symsim/css/style.css" %}'>
+{% endblock content%}

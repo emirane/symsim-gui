@@ -1,0 +1,582 @@
+.logo {
+    width: 210px;
+    height: 80px;
+    margin-top: -5px;
+}
+footer {
+    background-color: #00013D;
+    padding: 20px;
+    margin: 0px;
+    color: #E9E9E9;
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.topo-img > img {
+    left:5%;
+    top:10%;
+	width: 70%;
+}
+.topology {
+	padding-top:60px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    text-align: center;
+
+}
+.topo-img-text {
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+    text-align: center;
+
+}
+
+.content {
+    padding-top: 80px;
+}
+
+#conf_1 {
+border-spacing: 10px;
+margin: 0 auto;
+}
+
+.topo-describe {
+	padding: 10px;
+	font-family: 'Fira Sans', sans-serif;
+	width: 80%;
+	font-size: 16px;
+}
+.main-page {
+ text-align: center;
+  color: #464747;
+  font-size: 38px;
+  font-weight: bold;
+ font-family: 'Open Sans', sans-serif;
+}
+
+
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .control-group {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+      display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #555;
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  display: block;
+   width: 100%;
+   height: 34px;
+   padding: 6px 12px;
+   font-size: 14px;
+   line-height: 1.42857143;
+   color: #555;
+   background-color: #fff;
+   background-image: none;
+   border: 1px solid #ccc;
+   border-radius: 4px;
+   -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+
+body{
+
+		background-color: rgba(232,235,251,1);
+	}
+    .textinput.textInput, .emailinput{
+		height: 40px;
+		box-shadow: none;
+		color: #969fa4;
+        border-radius: 3px;
+        display: block;
+        width: 100%;
+	}
+	.form-control:focus{
+		border-color: #5cb85c;
+	}
+    .form-control, .btn{
+        border-radius: 3px;
+    }
+	.signup-form{
+		width: 400px;
+		margin: 0 auto;
+		padding: 100px 0;
+	}
+	.signup-form h2{
+		color: #636363;
+        margin: 0 0 15px;
+		position: relative;
+		text-align: center;
+    }
+	.signup-form h2:before, .signup-form h2:after{
+		content: "";
+		height: 2px;
+		width: 10%;
+		background: #d4d4d4;
+		position: absolute;
+		top: 50%;
+		z-index: 2;
+	}
+	.signup-form h2:before{
+		left: 0;
+	}
+	.signup-form h2:after{
+		right: 0;
+	}
+    .signup-form .hint-text{
+		color: #999;
+		margin-bottom: 30px;
+		text-align: center;
+	}
+    .signup-form form{
+		color: #999;
+		border-radius: 3px;
+    	margin-bottom: 15px;
+        background: #f2f3f7;
+        box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+        padding: 30px;
+    }
+	.signup-form .form-group{
+		margin-bottom: 20px;
+	}
+	.signup-form input[type="checkbox"]{
+		margin-top: 3px;
+	}
+	.signup-form .btn{
+        font-size: 16px;
+        font-weight: bold;
+		min-width: 140px;
+        outline: none !important;
+    }
+	.signup-form .row div:first-child{
+		padding-right: 10px;
+	}
+	.signup-form .row div:last-child{
+		padding-left: 10px;
+	}
+    .signup-form a{
+		color: #fff;
+		text-decoration: underline;
+	}
+    .signup-form a:hover{
+		text-decoration: none;
+	}
+	.signup-form form a{
+		color: #5cb85c;
+		text-decoration: none;
+	}
+	.signup-form form a:hover{
+		text-decoration: underline;
+	}
+
+.alert {
+    padding:0 0 0 0;
+    color: red;
+}
+.row.profile {
+    padding-top: 8%;
+}
+
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  min-height:460px;
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  display: block;
+  margin: 0 auto;
+  width: 50%;
+
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+  text-align:center;
+}
+
+.profile-content a {
+   font-size: 18px;
+   text-decoration: none;
+   cursor: pointer;
+}
+
+.col-sm-3 {
+    width:33%;
+}
+.row {
+    margin-right:5%;
+    margin-left:5%;
+}
+
+.login-form.hidden {
+    display: none;
+}
+.login-form {
+	 position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+}
+#login_form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+}
+#login_form input {
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+#login_form button {
+  outline: 0;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  width: 130px;
+}
+#model_created {
+    display:none;
+}
+
+.list_user_model.hidden {
+    display:none;
+
+}
+.list_user_model {
+    padding: 0;
+    display:block;
+    list-style: none
+}
+.list_user_model i {
+    margin-right: 20px;
+}
+
+.list_user_model li {
+    margin-top: 10px;
+}
+
+.model-wrapper {
+    padding-top:2%;
+    min-height: 100%;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+
+.side-menu  {
+   width: 210px;
+}
+.side-bar.hidden {
+    display:none;
+}
+
+.side-bar {
+   cursor: pointer;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    margin: 0;
+    padding: 10px 0;
+ }
+ .side-bar img {
+    cursor: pointer;
+    float: left;
+    width: 70px;
+    height: 80px;
+    margin-top: 15px;
+    margin-left: 5px;
+}
+
+.side-bar>li {
+margin-top: 20px;
+  }
+
+ul.side-bar {
+    background: #222930;
+}
+
+ .side-bar>li> a{
+    display: flex;
+ }
+ .side-bar > li > a p{
+    font-size: 14px;
+ }
+
+#cy {
+    margin-left: 50px;
+    margin-top: 50px;
+    border: 1px solid #a5a5a5;
+    background:white;
+    width: 800px;
+    height: 500px;
+}
+canvas {
+    left: 0;
+}
+.model-config {
+    width: 300px;
+}
+.gt-1, .bb-1, .rd, .sw {
+    display: none;
+}
+.gt-1.active, .bb-1.active, .rd.active, .sw.active {
+    display:block;
+}
+
+.gt-1 input, .bb-1 input, .rd input, .sw input{
+    width: 100px;
+    margin-left: 10px;
+    float: right;
+    height: 30px;
+}
+
+
+.field {
+    margin-top: 20px;
+    clear: both;
+    text-align: right;
+    height: 40px;
+}
+.field label {
+    width: 150px;
+    font-size: 12px;
+    padding-top: 5px;
+}
+.form-button {
+    width: 150px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.add-device {
+    flex-direction: column;
+    background-color: #dff0d8;
+    color: #3c763d;
+    width: 340px;
+    align-items: center;
+    display: none;
+}
+
+.add-device.compnode.active, .add-device.datagen.active,
+.add-device.diskserver.active, .add-device.switch.active{
+    display: flex;
+    width: 300px;
+}
+
+.text-success.hidden {
+    display: none
+}
+.text-success {
+    display: block;
+}
+
+.add-device button {
+    width: 50%;
+}
+
+.add-edge {
+    margin-top: 40px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    width: 300px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+.add-edge select {
+    width: 75px;
+}
+.add-edge input {
+    width: 150px;
+
+}
+
+.add-edge__button {
+    width: 50%;
+    margin-top: 20px;
+}
+
+.parameters {
+    display: flex;
+    flex-direction: row;
+}
+
+.parameters__div {
+    width: 230px;
+    margin-left: 45px;
+}
+
+.parameters__forms {
+    display:block
+}
+
+.device-for-simulation {
+    list-style:none;
+    text-align: left;
+    padding: 0;
+}
+
+.open-form {
+    text-decoration: none;
+    font-size: 18px;
+    margin: 0;
+    cursor: pointer;
+}
+.button-param {
+    margin-top: 20px;
+}
+

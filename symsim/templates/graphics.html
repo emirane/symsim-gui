@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<link rel='stylesheet' href='{% static "symsim/css/bootstrap.min.css" %}' xmlns="http://www.w3.org/1999/html">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src='{% static "symsim/js/jquery.js" %}'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.js"></script>
+    <script src='{% static "symsim/js/script.js" %}'></script>
+
+    <title>Title</title>
+</head>
+<body>
+<div style="margin-left: 100px; margin-top: 50px">
+    <input type="button" class="btn btn-graph" value="График нагрузки на коммутаторы">
+    <input type="button" class="btn btn-graph2" value="График количества свободных процессоров">
+    <div>
+        <canvas id="myChart" width="800px", height="600px"></canvas>
+    </div>
+</div>
+</body>
+</html>

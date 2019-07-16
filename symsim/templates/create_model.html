@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<link rel='stylesheet' href='{% static "symsim/css/style.css" %}'>
+<script src='{% static "symsim/js/jquery.js" %}'></script>
+<script src='{% static "symsim/js/script.js" %}'></script>
+<script src='{% static "symsim/js/cytoscape.min.js" %}'></script>
+
+<h2 style="text-align:center; margin-top: 8%" class="model-name">{{ user_model.model_name }}</h2>
+<div class="model-wrapper">
+    <div class="side-menu">
+        <a class="open-list-device"><i class="glyphicon glyphicon-menu-down"></i>  Выберите устройство из списка</a>
+        <ul class="side-bar hidden">
+            <li id="bb-1" onclick="TabForm(this.id)">
+                <a class="open-form-cn" style="text-decoration: none">
+                    <img src='{% static "symsim/img/device/compnode.png" %}'  style="width:70px; margin-left: 0">
+                    <p style="margin-top:30px">Вычислительный узел</p>
+                </a>
+            </li>
+            <li id="rd" onclick="TabForm(this.id)">
+                 <a class="open-form-ds" style="text-decoration: none" >
+                     <img src='{% static "symsim/img/device/disk-server1.png" %}' style="width: 50px; margin-left: 10px;">
+                     <p style="margin-top:40px;margin-left: 15px;">Дисковый сервер</p>
+                 </a>
+            </li>
+            <li id="gt-1" onclick="TabForm(this.id)">
+                 <a class="open-form-dg" style="text-decoration: none">
+                     <img src='{% static "symsim/img/device/generator-1.png" %}'  class="left-img" style="height: 90px; width:75px; margin-left: 10px;">
+                    <p style="margin-top:30px">Генератор данных</p>
+                </a>
+            </li>
+            <li id="sw" onclick="TabForm(this.id)">
+                <a class="open-form-sw" style="text-decoration: none">
+                     <img src='{% static "symsim/img/device/NetworkSwitch.png" %}' class="left-img"  style="height: 55px; width: 80px;margin-left: 5px;">
+                     <p style="margin-top:30px; margin-left: 15px">Коммутатор</p>
+                </a>
+            </li>
+            <li id="3" >
+                 <a class="open-form-robotic" style="text-decoration: none">
+                     <img src='{% static "symsim/img/device/robothand1.png" %}' style="margin-left: 10px;">
+                     <p style="margin-top:40px; margin-left: 30px">Робот</p>
+                 </a>
+            </li>
+        </ul>
+    </div>
+
+    <div>
+        <div id="cy" ></div>
+
+        <div class="parameters">
+            <div class="parameters__div task">
+                <a class="open-form task-flow">Генерировать поток заданий</a>
+                <form class="parameters__forms task hidden">
+                    <div><label>Количество заданий, шт</label><input type="number" class="form-control"></div>
+                    <div><label>Среднее время выполнения, MI</label><input type="number" class="form-control"></div>
+                    <button class="btn btn-success button-param">Применить</button>
+                </form>
+            </div>
+
+            <div class="parameters__div files">
+                <a class="open-form params-files">Генерировать файлы</a>
+                <form class="parameters__forms files hidden ">
+                    <div><label>Общее количество файлов, шт</label><input type="number" class="form-control"></div>
+                    <div><label>Средний размер файла, МБ</label><input type="number" class="form-control"></div>
+                    <div><label>Доля файлов на серверах</label><input type="number" class="form-control"></div>
+                    <div><label>Доля файлов в ленточной библиотеке</label><input type="number" class="form-control"></div>
+                    <button class="btn btn-success button-param">Применить</button>
+                </form>
+            </div>
+
+            <div class="parameters__div simulation">
+                <a class="open-form start-params">Параметры запуска программы</a>
+                <form class="parameters__forms hidden simulation">
+                    <div><label>Продолжительность эксперимента, мин</label><input type="number" class="form-control"></div>
+                    <div><label>Частота сбора статистики, сек</label><input type="number" class="form-control"></div>
+                    <ul class="device-for-simulation">
+                        <li><input type="checkbox" class="form-check-input"><label>Файлы</label></li>
+                        <li><input type="checkbox" class="form-check-input"><label>Задания</label></li>
+                        <li><input type="checkbox" class="form-check-input"><label>Вычислительные узлы</label></li>
+                        <li><input type="checkbox" class="form-check-input"><label>Дисковые хранилища</label></li>
+                        <li><input type="checkbox" class="form-check-input"><label>Роботизированная библиотека</label></li>
+                        <li><input type="checkbox" class="form-check-input"><label>Сеть и коммутаторы</label></li>
+                    </ul>
+                    <button class="btn btn-success start-button">Начать моделирование</button>
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="model-config">
+        <h4><i class="glyphicon glyphicon-wrench"></i>  Введите параметры устройства</h4>
+        <div class="forms">
+          <form class="gt-1">
+           <span class="text-info">Генератор данных</span>
+            <div class="field"><label>Имя устройства</label><input type="text" class="form-control" id="data_gen_name"></div>
+            <div class="field"><label>Частота поступления данных с установки, сек</label><input type="number" class="form-control" id="fd"></div>
+            <div class="field"> <label>Размер поступающих данных с установки, МБ</label><input type="number" class="form-control" id="vd"></div>
+            <label style="margin-top:20px;" class="text-success hidden">Параметры устройства успешно добавлены</label>
+             <button type="button" class="form-button button-dg btn btn-success">Применить</button>
+
+        </form>
+
+            <form class="bb-1">
+                <span class="text-info">Вычислительный  узел</span>
+                <div class="field"><label for="cn_name">Имя устройства</label><input type="text" class="form-control" id="cn_name"></div>
+                <div class="field"><label>Количество процессоров, шт</label><input type="number" class="form-control" id="qp"></div>
+                <div class="field"> <label>Производительность процессоров, МГц</label><input type="number" class="form-control" id="mp"></div>
+                <div class="field"> <label>Объем диска, ГБ</label><input type="number" class="form-control" id="dv"></div>
+                <label style="margin-top:20px;" class="text-success hidden">Параметры устройства успешно добавлены</label>
+                <div><button type="button" class="form-button button-cn btn btn-success">Применить</button></div>
+            </form>
+
+            <form class="rd">
+                <span class="text-info">Дисковый сервер</span>
+                <div class="field"><label>Имя устройства</label><input type="text" class="form-control" id="disk_server_name"></div>
+                <div class="field"><label>Объем, МБ</label><input type="number" class="form-control" id="pool-size"></div>
+                <button type="button" class="form-button button-ds btn btn-success">Применить</button>
+            </form>
+
+            <form class="sw">
+                <span class="text-info">Коммутатор</span>
+                <div class="field"><label>Имя устройства</label><input type="text" class="form-control" id="sw_name"></div>
+                <div class="field"><label>Пропускная способность, МБ/с</label><input type="number" class="form-control" id="capacity" name="v"></div>
+                <button type="button" class="form-button button-sw btn btn-success">Применить</button>
+            </form>
+        </div>
+
+
+        <div class="add-device compnode">
+            <span>Нажмите на кнопку, чтобы добавить устройство на форму</span>
+            <button class="add-device__compnode__button btn btn-info" disabled>Добавить</button>
+        </div>
+
+        <div class="add-device diskserver">
+            <span>Нажмите на кнопку, чтобы добавить устройство на форму</span>
+            <button class="add-device__diskserver__button btn btn-info" disabled>Добавить</button>
+        </div>
+
+        <div class="add-device datagen">
+            <span>Нажмите на кнопку, чтобы добавить устройство на форму</span>
+            <button class="add-device__datagen__button btn btn-info" disabled>Добавить</button>
+        </div>
+
+        <div class="add-device switch">
+            <span>Нажмите на кнопку, чтобы добавить устройство на форму</span>
+            <button class="add-device__switch__button btn btn-info" disabled>Добавить</button>
+        </div>
+
+        <div class="add-edge">
+            <span>Выберите устройство из списков, чтобы добавить связь между ними (source-target)</span>
+            <div>
+                <select class="device-list source custom-select">
+                   <!-- <option value="rl">rl</option> !-->
+                 </select>
+
+                <select class="device-list target">
+                  <!-- <option value="rl">rl</option> !-->
+                </select>
+
+            </div>
+            <label style="padding-left: 5px; padding-top: 5px;">Введите пропускную способность</label>
+            <div style="display: flex; flex-direction:row; margin-top: 5px;">
+                <input class="capacity-edge form-control" type="number" required style="margin-left: 35px">
+                <label style="padding-left: 5px; padding-top: 5px;">Мб/c</label></div>
+            <button class="add-edge__button">Соединить</button>
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+<script src='{% static "symsim/js/cytoscape.js" %}'></script>
+{% endblock content%}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container marketing">
+<hr class="featurette-divider">
+
+  <div class="row featurette" style="margin-top: 75px">
+        <div class="col-md-7 col-md-push-5">
+          <h2 class="featurette-heading">Области применения</h2>
+          <p class="lead">
+          <p class="lead" style="align:justify">Программа моделирования SyMSim применяется к широкому классу задач проектирования систем обработки и хранения больших массивов данных:</p>
+          <p class="lead" style="align:justify">1. Моделирование проектируемого центра обработки данных экспериментов комплекса NICA.</p>
+          <p class="lead" style="align:justify">2. Моделирование системы распределенной обработки данных эксперимента BM@N в составе комплекса Tier0-Tier1 NICA.</p>
+          <p class="lead" style="align:justify">3. Моделирование центра обработки данных Института физики высоких энергий Китайской Академии наук.</p>
+          <p class="lead" style="align:justify">4. Моделирование параллельных вычислений в облачной среде с использованием технологии MPI на примере расчетов длинных джозефсоновских переходов.</p>
+          </p>
+        </div>
+        <div class="col-md-5 col-md-pull-7">
+          <img class="featurette-image img-responsive center-block" src='{% static "symsim/img/complex.png" %}' alt="Generic placeholder image" style="padding-top:25%; height: 450px;">
+        </div>
+  </div>
+</div>
+{% endblock content %}

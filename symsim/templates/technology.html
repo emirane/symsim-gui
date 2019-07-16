@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+<div class="container marketing">
+<hr class="featurette-divider">
+
+      <div class="row featurette" style="margin-top: 75px">
+        <div class="col-md-7">
+          <h2 class="featurette-heading">Технология</h2>
+          <p class="lead">Программа моделирования написана на языке программирования Java с использованием библиотеки GridSim. В качестве системы управления базами данных используется PostgreSQL.</p>
+        </div>
+        <div class="col-md-5">
+          <img class="featurette-image img-responsive center-block" src='{% static "symsim/img/technology.png" %}' alt="Generic placeholder image" style="height: 40%;">
+        </div>
+      </div>
+</div>
+{% endblock content %}

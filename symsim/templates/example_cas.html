@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% block content %}
+<link rel='stylesheet' href='{% static "symsim/css/style.css" %}'>
+<link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Russo+One|Open+Sans|Fira+Sans" rel="stylesheet">
+<div class="content">
+
+<div class="topology">
+	<div class="topo-img-text">
+	<div class="topo-img">
+	<img src='{% static "symsim/img/example-knr.jpg"%}' id="topo-1">
+	</div>
+
+	<div class="topo-describe">
+	<p align="justify">
+	Каждое задание, поступающее на обработку в один из вычислительных узлов (Computing Node) требует файл. Несколько заданий могут требовать один и тот же файл. Для того, чтобы задание начало выполняться, файл должен быть доступен в локальном пуле дисков, где он может присутствовать изначально. Но может потребоваться загрузка файла из памяти долговременного хранения (пул дисков, роботизированная библиотека). Для иллюстрации подхода к анализу результатов моделирования ограничимся случаем, когда файлы находятся на удаленном дисковом пуле (Disk Server) и требуют загрузки в локальный пул.
+
+	<h3>Конфигурация вычислительных узлов</br></h3>
+	<table id="conf_1">
+	<tr><th>Параметр</th><th>bb1</th><th>bb2</th></tr> <!--ряд с ячейками заголовков-->
+	<tr><td>Количество процессоров, шт</td><td id="td_1">500</td><td id="td_1">500</td></tr>
+	<tr><td>Производительность процессоров, МГц</td><td id="td_1">1</td><td id="td_1">1</td></tr>
+	<tr><td>Объем диска, ГБ</td> <td id="td_1">500</td><td id="td_1">500</td></tr>
+	<!--ряд с ячейками тела таблицы-->
+	</table>
+	<p align="justify">
+	Моделирование проводилось для эксперимента продолжительностью 25 часов. За это время поступило 10000 заданий.
+	На дисковых серверах хранилось 1000 файлов объемом от 10 до 100 ГБ каждый.
+	</p>
+	<div>
+	<a href="#show-more-results" id="show_more">Показать результаты</a></br>
+	</div>
+	</div>
+	</div>
+	<div class="show-more-content hidden">
+	<a id="show-more-results"></a>
+	<h2 >Результаты</h2>
+	</br>
+	<h4 style="margin:0">1. Нагрузка на сетевые коммутаторы во время передачи файлов</h4>
+	<img src="image/topo-1-gr-1.jpg" id="topo-1-gr-1">
+	<h4 style="margin-bottom: 0">2. Количество свободных процессоров при обработке поступающих заданий</h4>
+	<img src="image/topo-1-gr-2.jpg" id="topo-1-gr-2">
+
+	</div>
+	</div>
+</div>
+
+
+			</div>
+				<div class="container-absolute">
+					<div class="login-form hidden">
+						<form action="#" id="login_form" >
+						<input type="text" name="login" placeholder="Логин">
+						<input type="password" placeholder="Пароль">
+						<button type="button">Войти</button>
+						<button type="button" id="cancel-button">Отмена</button>
+						<p class="message">Не зарегестрированы? <a href="regform.html">Создайте аккаунт</a></p>
+						</form>
+					</div>
+				</div>
+{% endblock content %}

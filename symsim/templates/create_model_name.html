@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+<link rel='stylesheet' href='{% static "symsim/css/style.css" %}'>
+
+<div class="container">
+    <div class="row profile">
+		<div class="col-md-3">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="https://static.change.org/profile-img/default-user-profile.svg"  alt="">
+				</div>
+				<!-- END SIDEBAR USERPIC -->
+				<!-- SIDEBAR USER TITLE -->
+				<div class="profile-usertitle">
+					<div class="profile-usertitle-name">
+						{{ request.user }}
+					</div>
+					<div class="profile-usertitle-job">
+						Developer
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+
+						<li>
+							<a href="" class="text-success">
+							<i class="glyphicon glyphicon-user"></i>
+							Настройки профиля </a>
+						</li>
+						<li>
+							<a href="" target="_blank">
+							<i class="glyphicon glyphicon-book"></i>
+							Справка </a>
+						</li>
+						<li>
+							<a href="">
+							<i class="glyphicon glyphicon-flag"></i>
+							Обратная связь </a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+         <div class="">
+        <form id="login_form" method="POST">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="create-model-name-button btn btn-success">Создать модель</button>
+            <button type="button" class="cancel-button btn btn-danger">Отмена</button>
+        </form>
+    </div>
+    </div>
+
+
+</div>
+{% endblock content%}
